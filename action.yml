@@ -1,0 +1,29 @@
+name: 'SOPS Encryption Generator'
+description: 'Re-encrypt SOPS-encrypted files with updated GPG public keys'
+author: 'Microscaler'
+
+inputs:
+  private_key:
+    description: 'Base64-encoded GPG private key'
+    required: true
+  public_keys:
+    description: 'JSON output from get-users-with-access-on-repo action'
+    required: false
+    default: '{"users":[]}'
+  flux_key:
+    description: 'Flux GPG public key (base64-encoded)'
+    required: false
+    default: ''
+  secrets_pattern:
+    description: 'Glob pattern for secret files'
+    required: false
+    default: '**/application.secrets.env'
+  sops_version:
+    description: 'SOPS version to use'
+    required: false
+    default: '3.10.2'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
