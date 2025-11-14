@@ -25,5 +25,7 @@ inputs:
 
 runs:
   using: 'docker'
+  # For local development, use Dockerfile
+  # For published versions, use: docker://ghcr.io/microscaler/sops-encryption-generator:latest
   image: 'Dockerfile'
 
