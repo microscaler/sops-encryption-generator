@@ -1,12 +1,6 @@
 # Rust build artifacts
 target/
 Cargo.lock
-**/*.rs.bk
-*.pdb
-
-# Environment
-.env
-.env.local
 
 # IDE
 .vscode/
@@ -14,8 +8,28 @@ Cargo.lock
 *.swp
 *.swo
 *~
+
+# OS
 .DS_Store
+Thumbs.db
 
 # Logs
 *.log
 
+# Environment variables
+.env
+.env.local
+
+# Backup files
+*.backup
+*_backup_*
+
+# Docker
+*.dockerignore
+
+# GPG keys (never commit!)
+*.pem
+*.key
+*.gpg
+private-key*
+*.asc
